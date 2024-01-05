@@ -22,7 +22,7 @@ def image_input():
             img = infer_image(img_file)
             st.image(img, caption="Model prediction")
 
-def infer_image(img, size=224):
+def infer_image(img, size=416):
     model.conf = 0.25
     result = model(img, size=size) 
     result.render()
