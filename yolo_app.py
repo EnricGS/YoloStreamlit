@@ -5,8 +5,7 @@ from PIL import Image
 @st.cache_resource
 def load_model(path, device):
     torch.hub._validate_not_a_forked_repo=lambda a,b,c: True   #afegit per evitar error de conexió
-    model_ = torch.hub.load('ultralytics/yolol5', 'custom', path=path, force_reload=True)
-    #model_.to(device)
+    model_ = torch.hub.load('ultralytics/yolov5', 'yolov5l', path=path, force_reload=True)
     return model_
  
 def image_input():
